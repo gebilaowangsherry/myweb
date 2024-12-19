@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "字魂风华雅宋(商用需授权)";
+  src: url("../font/字魂风华雅宋\(商用需授权\).ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden; /* 去除滚动条 */
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.bgimg {
+  background-image: url("../index图片/背景.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.profile {
+  width: 15.625vw;
+  position: absolute;
+  left: 42.5vw;
+  top: 15vh;
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: scaleAnimation 2s linear infinite; /* 应用放大缩小动画 */
+}
+
+p {
+  font-family: "字魂风华雅宋(商用需授权)";
+  color: #ffffff;
+  opacity: 0; /* 初始化为透明 */
+}
+
+.header {
+  font-size: 48px;
+  position: absolute;
+  top: 50vh;
+  left: 41.5vw;
+  animation: fadeIn 2s ease 0.5s forwards; /* 应用动画，延迟1秒 */
+}
+
+.slogan {
+  font-size: 32px;
+  position: absolute;
+  top: 62vh;
+  left: 33vw;
+  animation: fadeIn 2s ease 1.5s forwards; /* 应用动画，延迟2秒 */
+}
+
+button {
+  width: 12vw;
+  height: 7vh;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 100px;
+  border: 1px solid #ffffff;
+  position: absolute;
+  top: 74vh;
+  left: 44vw;
+  opacity: 0; /* 初始化为透明 */
+  animation: fadeIn 2s ease 2.5s forwards; /* 应用动画，延迟3秒 */
+}
+
+#click {
+  font-family: "字魂风华雅宋(商用需授权)";
+  color: #ffffff;
+  font-size: 24px;
+}
+
+/* 定义关键帧动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 定义放大缩小动画 */
+@keyframes scaleAnimation {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
