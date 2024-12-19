@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作品</title>
+    <link rel="stylesheet" href="../css/work.css" />
+  </head>
+  <body>
+    <!-- 导航栏 -->
+    <div class="nav">
+      <a href="./首页.html">首页</a>
+      <a href="./简介.html">简介</a>
+      <a href="#">作品</a>
+      <a href="#">日常</a>
+      <a href="#">联系方式</a>
+    </div>
+
+    <div class="wrapper">
+      <!-- 海报设计 -->
+      <div class="post" id="post">
+        <h1>海报设计</h1>
+        <div class="line"></div>
+        <div class="container">
+          <div class="cell cell-1-1">
+            <img src="../index图片/家乡海报设计.png" alt="" />
+          </div>
+          <div class="cell cell-1-2">
+            <img src="../index图片/森林之殇.png" alt="" />
+          </div>
+          <div class="cell cell-1-3">
+            <img src="../index图片/丹顶鹤海报.png" alt="" />
+          </div>
+          <div class="cell cell-2-1">
+            <img src="../index图片/合成.png" alt="" />
+          </div>
+          <div class="cell cell-2-2">
+            <img src="../index图片/赛博朋克.png" alt="" />
+          </div>
+          <div class="cell cell-2-3">
+            <img src="../index图片/个人海报.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <!--交互设计-->
+      <div class="ui" id="ui">
+        <h1>交互设计</h1>
+        <div class="line"></div>
+        <div class="swiper-list-card swiper-list">
+          <div class="swiper-main-card swiper-main"></div>
+          <img
+            id="prev-card"
+            class="btn leftBtn"
+            src="../index图片/left.png"
+            alt=""
+          />
+          <img
+            id="next-card"
+            class="btn rightBtn"
+            src="../index图片/right.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- 模态框 -->
+    <div class="modal" id="modal">
+      <img src="" alt="" id="modal-img" class="modal-content" />
+    </div>
+
+    <script src="../js/slider_card.js"></script>
+    <script src="../js/lunbo.js"></script>
+    <script src="../js/click.js"></script>
+  </body>
+</html>
