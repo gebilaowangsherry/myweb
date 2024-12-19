@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /*隐藏横向滚动条*/
+  overflow-x: hidden;
+  background-image: url(../index图片/背景2.png);
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*顶部导航栏*/
+.nav {
+  display: flex;
+  background-color: #8c817a;
+  font-size: 16px;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 2;
+}
+.nav a {
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+.nav a:hover {
+  background-color: #fff;
+  color: #8c817a;
+}
+.wrapper {
+  padding-top: 10vh;
+  /* height: 100vh; */
+  width: 80%;
+  z-index: 2;
+  margin: 0 auto;
+  padding-bottom: 5vh;
+}
+.post{
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+.post h1,.ui h1{
+  text-align: center;
+  color: white;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+}
+.line {
+  margin: 0 auto;
+  width: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.modal {
+  display: none; /* 默认不显示 */
+  position: fixed;
+  z-index: 10; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.5); 
+}
+
+/* 模态框中的图片样式 */
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  max-height: 90%;
+}
+.post .container {
+  padding-top: 5vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, auto); 
+  gap: 20px;
+}
+.cell {
+  width: 100%; 
+  height: 0; 
+  padding-top: 100%; 
+  position: relative; 
+  overflow: hidden;
+}
+.cell img {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transition: transform 0.3s ease; /* 添加过渡效果 */
+}
+
+.cell:hover img {
+  transform: scale(1.05); 
+}
+
+.cell-2-1 {
+  grid-column: span 2; /* 跨越两列 */
+   grid-row: span 2; /*跨越两行 */
+}
+
+/*轮播图*/
+.swiper-list {
+  width: 100%;
+  margin: 0 auto;
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+  /* border: 1px solid #eee; */
+  padding-top: 5vh;
+}
+.swiper-main {
+  height: 100%;
+  position: relative;
+}
+.swiper-main img {
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0px;
+  border-radius: 4px;
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  z-index: 1002;
+}
+.leftBtn {
+  left: 0px;
+}
+.rightBtn {
+  right: 0px;
+}

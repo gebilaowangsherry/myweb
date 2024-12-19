@@ -1,0 +1,568 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 字魂风华雅宋\(商用需授权\);
+  src: url(../font/字魂风华雅宋\(商用需授权\).ttf);
+  font-family: QingNiaoHuaGuangJianMeiHei-2;
+  src: url(../font/QingNiaoHuaGuangJianMeiHei-2.ttf);
+}
+
+a {
+  text-decoration: none;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url(../index图片/背景.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* 取消横向滚动条 */
+  overflow-x: hidden;
+}
+
+/* 背景图片 */
+.firstPage {
+  width: 100%;
+  height: 100vh;
+}
+
+/* 导航栏 */
+.nav {
+  display: flex;
+  background-color: #8c817a;
+  font-size: 16px;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 2;
+}
+.nav a {
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+}
+.nav a:hover {
+  background-color: #fff;
+  color: #8c817a;
+}
+
+/* 标题*/
+.main {
+  margin-top: 22vh;
+}
+.main h1,
+h2,
+p {
+  font-family: 字魂风华雅宋\(商用需授权\);
+  font-size: 96px;
+  margin-top: 8vh;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+h2 {
+  font-size: 28px;
+  font-weight: 400;
+}
+p {
+  font-family: QingNiaoHuaGuangJianMeiHei-2;
+  font-size: 20px;
+
+}
+.main p{
+  opacity: 0;
+}
+.main .name {
+  margin: 0 auto;
+  margin-top: 8vh;
+  background-color: #ed551a;
+  opacity: 0.8;
+  border-radius: 30px;
+  width: 10vw;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  opacity: 0;
+}
+/* 定义动画 */
+/* 定义从左侧飞入的动画 */
+@keyframes flyInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 定义从右侧飞入的动画 */
+@keyframes flyInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 应用动画*/
+.main h1 {
+  animation: flyInFromLeft 1s ease forwards;
+}
+.main h2 {
+  animation: flyInFromRight 1s ease forwards;
+}
+.main p {
+  animation: flyInFromLeft 1s ease 0.5s forwards; /* 延迟0.5秒 */
+}
+.main .name {
+  animation: flyInFromRight 1s ease 0.5s forwards; /* 延迟0.5秒 */
+}
+
+/* 第一屏媒体查询 */
+@media screen and (max-width: 1280px) {
+  .main h1 {
+    font-size: 68px;
+  }
+}
+
+/* 第二屏 */
+.secondPage {
+  width: 100%;
+  /* height: 100vh; */
+  background-color: #f0deb7;
+}
+.wrapper {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  /* background-color: pink; */
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  display: flex;
+  gap: 10%;
+  justify-content: space-around;
+}
+/* 左边 */
+.wrapper .left {
+  width: 35%;
+}
+.wrapper .left img {
+  width: 100%;
+  height: auto;
+}
+/* 右边 */
+.wrapper .right {
+  position: relative;
+  width: 60%;
+}
+.title {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+}
+.right .number {
+  font-size: 76px;
+  font-family: QingNiaoHuaGuangJianMeiHei-2;
+  color: #f65751;
+}
+.right .name {
+  font-size: 26px;
+  color: #3d3f47;
+  align-self: center;
+}
+.secondPage p {
+  font-family: QingNiaoHuaGuangJianMeiHei-2;
+  font-size: 18px;
+  color: #3d3f47;
+  line-height: 1.5em;
+  margin-top: 3vh;
+}
+.secondPage .decoration {
+  color: #3d3f47;
+  font-size: 200px;
+  font-weight: 800;
+  opacity: 0.2;
+  position: absolute;
+  right: 0;
+}
+/* 了解更多 */
+.learnMore {
+  display: flex;
+  justify-content: space-around;
+  width: 8vw;
+  margin-top: 3vh;
+  position: absolute;
+  left: 0;
+}
+.learnMore .arrow {
+  background-image: url(../index图片/（logo）箭头.png);
+  background-repeat: no-repeat;
+  width: 2vw;
+  height: 2vw;
+  align-self: center;
+}
+.learnMore .text {
+  color: #3d3f47;
+  font-weight: 600;
+  opacity: 0.6;
+  align-self: center;
+}
+/* 第二屏媒体查询 */
+@media screen and (max-width: 1280px) {
+  .right .title {
+    width: 30%;
+  }
+  .title .name {
+    font-size: 20px;
+  }
+  .right p {
+    font-size: 14px;
+  }
+  .learnMore {
+    width: 10vw;
+  }
+  .learnMore .text {
+    font-size: 16px;
+  }
+  .decoration {
+    font-size: 120px;
+  }
+}
+
+/* 第三页 */
+.thirdPage {
+  width: 100%;
+}
+.container {
+  padding-top: 10vh;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.box1 {
+  width: 35%;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box1 .title {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+.box1 .number {
+  font-weight: 800;
+  font-size: 76px;
+  font-family: QingNiaoHuaGuangJianMeiHei-2;
+  color: #f65751;
+}
+.box1 .name {
+  font-size: 26px;
+  color: #3d3f47;
+  align-self: center;
+}
+.thirdPage .decoration {
+  color: #3d3f47;
+  font-size: 200px;
+  font-weight: 800;
+  opacity: 0.2;
+  position: absolute;
+  z-index: -1;
+}
+.box2 {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  align-items: center;
+}
+.box2 h1 {
+  opacity: 0.8;
+  font-size: 24px;
+  color: #3d3f47;
+  font-family: QingNiaoHuaGuangJianMeiHei-2;
+}
+#item1 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  font-size: 90px;
+}
+#item2 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  font-size: 32px;
+  font-weight: 500;
+}
+#item3 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  font-size: 26px;
+  font-weight: 500;
+}
+#item4 {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+  font-size: 50px;
+  font-weight: 600;
+}
+#item5 {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+  font-size: 40px;
+}
+#item6 {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+.box3 {
+  display: flex;
+  width: 80%;
+  /* height: 100px; */
+  padding-top: 5vh;
+  margin: 0 auto;
+  /* background-color: #fff; */
+  justify-content: space-between;
+}
+.smallbox1 {
+  position: relative;
+  background-color: #8c817a;
+  padding: 1vh;
+  width: 25vw;
+  box-shadow: 5px 5px 5px grey;
+  transition: transform 0.3s ease;
+  transform: translateY(0);
+}
+.smallbox1:hover {
+  transform: translateY(-10px);
+}
+.header img {
+  width: 4vw;
+  height: 4vw;
+  position: absolute;
+  right: 0;
+  top: 1vh;
+}
+.header .text {
+  color: white;
+  opacity: 0.8;
+  font-size: 16px;
+  padding: 1vh;
+}
+.text:nth-child(2) {
+  font-size: 14px;
+  opacity: 1;
+  font-weight: 500;
+}
+/* 图片 */
+.middle {
+  width: 100%;
+  height: 35vh;
+}
+.middle .pic {
+  background-image: url(../index图片/家乡海报设计.png);
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-repeat: no-repeat;
+}
+.middle .pic2 {
+  background-image: url(../index图片/博客首页.png);
+  background-size: 150%;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-repeat: no-repeat;
+}
+.middle .pic3 {
+  background-image: url(../index图片/赛博蜀韵·千载遗珍.png);
+  background-size: 100%;
+  background-position: bottom;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+.footer {
+  width: 100%;
+  margin-top: 2vh;
+}
+.footer .text {
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+}
+.footer p {
+  margin-top: 1vh;
+  font-size: 14px;
+  line-height: 1.8em;
+}
+
+/* 第四页 */
+.fourthPage {
+  position: relative;
+  width: 100%;
+  margin-top: 5vh;
+  background-color: #483c27;
+  height: 210vh;
+}
+.fourthPage .box01 {
+  padding-top: 10vh;
+  margin: 0 auto;
+  width: 12vw;
+}
+.fourthPage .container {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  top: 10vh;
+  padding: 0;
+  display: block;
+}
+.box01 .title {
+  margin-top: 1vh;
+  display: flex;
+  justify-content: space-between;
+  width: 12vw;
+  z-index: 1;
+}
+.box01 .title .number {
+  font-family: QingNiaoHuaGuangJianMeiHei-2;
+  font-weight: 800;
+  font-size: 76px;
+  color: #f65751;
+}
+.box01 .title .name {
+  font-family: QingNiaoHuaGuangJianMeiHei-2;
+  font-size: 26px;
+  align-self: center;
+  color: #f0deb7;
+}
+.box01 .decoration {
+  color: white;
+  font-size: 200px;
+  font-weight: 800;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+}
+.box02 {
+  margin-top: 5vh;
+  /* padding-right: 2vw; */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  border: 1px solid white;
+}
+.box02 [class^="pic"] {
+  width: 48%;
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.box02 .pic1 {
+  background-image: url(../index图片/旅行2.jpg);
+}
+.box02 [class^="text"] {
+  width: 48%;
+}
+.box02 [class^="text"] h1:nth-child(1) {
+  font-size: 60px;
+  color: white;
+}
+.box02 [class^="text"] h1:nth-child(2) {
+  font-size: 36px;
+  font-weight: 500;
+  color: white;
+}
+.box02 [class^="text"] p {
+  margin-top: 2vh;
+  line-height: 1.8em;
+  font-size: 16px;
+}
+.box02 .pic2 {
+  background-image: url(../index图片/书本.jpg);
+}
+.box02 .pic3 {
+  background-image: url(../index图片/美食.jpg);
+}
+.box02 .text1 {
+  padding-right: 2vw;
+}
+.box02 .text2 {
+  padding-left: 2vw;
+}
+
+/* 最后一屏 */
+.fifthPage {
+  width: 100%;
+  /* height: 80vh; */
+  position: relative;
+}
+.fifthPage .box01 {
+  padding-top: 10vh;
+  margin: 0 auto;
+  width: 12vw;
+}
+.fifthPage .title .name {
+  color: #3d3f47;
+}
+.fifthPage .box01 .decoration {
+  color: #3d3f47;
+  font-size: 200px;
+  font-weight: 800;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+}
+.fifthPage .box001 {
+  width: 80%;
+  margin: 0 auto;
+}
+.fifthPage .box001 p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  line-height: 1.8em;
+}
+.box001 p:nth-child(1) {
+  padding-top: 15vh;
+}
+.fifthPage .footer {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 10vh;
+  padding-bottom: 2vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.fifthPage .line {
+  width: 45%;
+  height: 1px;
+  border: 1px white solid;
+}
+.fifthPage .end,
+.line {
+  display: inline-block;
+}
+.end {
+  font-size: 20px;
+  color: white;
+}
